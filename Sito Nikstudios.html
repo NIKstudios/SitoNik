@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nikstudios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0d0f;
+      --panel:#0f1113;
+      --muted:#9aa5a1;
+      --neon:#1ed07a;
+      --neonDS:#00375c;
+      --neon-strong: rgba(30,208,122,0.16);
+      --card:#111418;
+      --radius:14px;
+      --transition: 360ms cubic-bezier(.2,.9,.2,1);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      color:#e5f0ec;
+      line-height:1.45;
+
+      /* Gradient animato verde neon */
+      background: linear-gradient(120deg, #0f1113,#001f18 );
+      background-size: 400% 400%;
+      animation: gradientBG 8s ease infinite;
+    }
+/* Scrollbar personalizzata migliorata */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0d0f;
+  border-radius: 12px;
+  margin: 0;
+  border-top: none;   /* elimina il bianco sopra */
+  border-bottom: none;/* elimina il bianco sotto */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1ed07a, #4ade80);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #4ade80, #1ed07a);
+}
+
+
+
+
+
+
+
+    a{text-decoration:none;color:inherit}
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* HEADER */
+    header{position:sticky;top:0;z-index:20;background:rgba(15,17,19,0.6);backdrop-filter:blur(6px);padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+    .nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 20px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:42px;height:42px;border-radius:10px;background:var(--neon);display:flex;align-items:center;justify-content:center;color:#0b0d0f;font-weight:800}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{color:var(--muted);font-weight:600;transition:color var(--transition)}
+    nav a:hover{color:var(--neon)}
+    .cta{background:linear-gradient(90deg,var(--neon),#4ade80);color:#0b0d0f;padding:10px 16px;border-radius:10px;font-weight:700}
+
+    /* HERO */
+    .hero{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:36px;align-items:center;padding:64px 20px}
+    h1{font-size:42px;margin:0 0 18px;line-height:1.05;font-weight:800}
+    p.lead{color:var(--muted);margin:0 0 24px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+
+    /* FEATURES */
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;max-width:1200px;margin:40px auto;padding:0 20px}
+    .feat{background:var(--panel);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
+    .feat h3{margin:0 0 8px}
+
+    /* PRICING */
+    .pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;max-width:1200px;margin:40px auto;padding:0 20px}
+    .plan{background:var(--panel);padding:22px;border-radius:14px;border:1px solid rgba(255,255,255,0.06)}
+    .plan h4{margin:0;font-weight:800;color:var(--neon)}
+
+    /* FOOTER */
+    footer{padding:28px 20px;color:var(--muted);background:#0f1113}
+    footer .container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+
+    /* Portfolio hover */
+    #portfolio a:hover { transform: translateY(-6px); }
+    
+    /* Particelle neon */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* dietro tutto */
+      top: 0;
+      left: 0;
+    }
+
+
+/* Scrollbar personalizzata migliorata */
+::-webkit-scrollbar {
+  width: 10px; /* larghezza scrollbar verticale */
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0d0f; /* stesso colore dello sfondo principale */
+  border-radius: 12px;
+  margin: 0; /* rimuove eventuali margini che creano il tratto bianco in cima */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1ed07a, #4ade80); /* colore "pollice" scrollbar */
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #4ade80, #1ed07a);
+}
+
+
+
+    
+  </style>
+</head>
+<body>
+  <!-- Particelle neon -->
+  <div id="particles-js"></div>
+
+  <header>
+    <div class="nav">
+      <div class="brand">
+      <!--<div class="logo">NS</div> -->
+      <!-- -->
+        <img src="Ns.png" alt="Discord" style="width:40px;height:40px">
+        <div>
+          <div style="font-weight:800">Nikstudios</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">Design • Dev • Creatività</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#servizi">Servizi</a></li>
+          <li><a href="#prezzi">Prezzi</a></li>
+          <li><a href="#Chisono">Chi sono</a></li>
+          <li><a href="#contatti">Contattami</a></li>
+          <li><a href="#Render">Contenuti</a></li>
+          <li><a href="#servizi">Portfolio</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#chi-siamo">Prossimamente</a>
+    </div>
+  </header>
+
+  <main>
+    
+    <section class="hero">
+      <div>
+        <h1>Benvenuto nel sito di <span style="color:var(--neon)">Nikstudios.</span> </h1>
+        <p class="lead">Se sei qui vuol dire che vuoi scoprire tutto di me!</p>
+        <div class="cta-row">
+          <a class="cta" href="#servizi">Scopri di più</a>
+        <!--  <a href="#servizi" style="padding:10px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:700">PortFolio</a> -->
+        </div>
+      </div>
+    </section>
+
+<section id="servizi" class="features">
+  <div class="feat">
+    <h3>Moddare Minecraft Legacy Edition</h3>
+    <p style="color:var(--muted)">
+      Dal 2016 mi occupo di creare e modificare mondi di Minecraft per PS3, Wii U e Xbox 360.  
+      Ho molti GB di mappe e software (con crediti ai rispettivi creatori, me compreso).  
+      Attualmente, dopo anni dalla dismissione della 4J Studios nello sviluppo di Minecraft dopo la versione 1.14 (PS4, fine 2019),  
+      mi occupo ancora di modding del gioco.  
+      Creo mappe moddate, skin (.PCK) e molto altro, distribuendo anche hack e strumenti riservati o rari al momento.
+      Creo anche Mod per Java & Bedrock (attualmente non ho una vetrina da mostrare)
+    </p>
+  </div>
+
+  <div class="feat">
+    <h3>Grafiche + Editing</h3>
+    <p style="color:var(--muted)">
+      Creo grafiche 3D di Minecraft in qualsiasi stile richiesto e titoli in stile Minecraft con Adobe Illustrator.  
+      (Non realizzo loghi in stile cartoon, ad esempio loghi server tipo CoralMC ecc.)
+
+    <li>Di Editing Lavoto con Pr (Premiere Pro) After Effect E Photoshop e Illustrator.</li>
+    <p>Per informazioni in più in privato</p>
+    </p>
+  </div>
+
+  <div class="feat">
+    <h3>Supporto + Hosting</h3>
+    <p style="color:var(--muted)">
+      Supporto tecnico e sviluppo + Hosting Bot Discord personalizzati (realizzati da me).  
+      Fornisco supporto nella creazione di:
+    </p>
+    <ul style="color:var(--muted); padding-left:18px; margin-top:6px;">
+      <li>Server Discord / Minecraft</li>
+      <li>Bot Discord</li>
+      <li>Plugins</li>
+      <li>Funzionalità Bot personalizzate + Hosting (a pagamento)</li>
+      <li>3D Modeller (bbmodel / C4D & Blender)</li>
+      <li>Texture Maker 1.8.9 & 1.21</li>
+    </ul>
+  </div>
+
+  <div class="feat">
+    <h3>Rendering & Building</h3>
+    <p style="color:var(--muted)">
+      Amo costruire un'infinità di tipologie di mappe, principalmente di tematiche o ambienti fantasy.  
+      Realizzo qualsiasi tipo di rendering con qualsiasi effetto, oltre a wallpaper animati o statici,
+      Costruisco Qualsiasi Tipologie di mappe, Tra Sfide Survival, Parkour, sfide e molto altro!
+      Per Prezzo o Proposte Scrivetemi Pure in Privato su Discord!  
+    </p>
+  </div>
+
+  <div class="feat">
+    <h3>Designer</h3>
+    <p style="color:var(--muted)">
+      Progetto e realizzo mappe in vari stili, con particolare attenzione al mondo fantasy.  
+      Posso creare render professionali, effetti speciali e immagini statiche o animate.
+    </p>
+  </div>
+
+  <div class="feat">
+    <h3>Programmazione</h3>
+    <p style="color:var(--muted)">
+      Mi occupo della creazione di software (.exe o .bat).  
+      Programmo in diversi linguaggi, tra cui:
+    </p>
+    <ul style="color:var(--muted); padding-left:18px; margin-top:6px;">
+      <li>VB.NET</li>
+      <li>C / C# / C++</li>
+      <li>Python</li>
+      <li>Js</li>
+    </ul>
+    <p style="color:var(--muted)">
+      Qualunque tipo di software può essere richiesto,  
+      a esclusione di applicazioni malevole (programmi che possano danneggiare il PC).
+    </p>
+  </div>
+</section>
+<div style="width:100%; text-align:center; margin:40px 0;">
+  <h2 style="font-size:48px; font-weight:800;">
+    Prezzi 💸
+  </h2>
+  
+</div>
+
+    <section id="prezzi" class="pricing">
+  <div class="plan">
+    <h4>Hosting Bot Discord</h4>
+
+    <p style="color:var(--muted)">Gratis con 1 Bot e Server min 500 Membri</p>
+    <p style="color:var(--muted)">Hosting veloce e sicuro per i tuoi bot Discord, Con la versione Gratuita di un solo bot ci possono essere riavvii Del bot ogni settimana e manutenzione interni!.
+      <li> Hosting di più Bot al mese +10€/l'uno </li>
+    </p>   
+   <div style="font-size:22px;font-weight:800;margin:12px 0">7€/mese Base</div>
+   <div style="font-size:22px;font-weight:800;margin:12px 0">20€/ogni 3 mesi Base</div>
+   <div style="font-size:22px;font-weight:800;margin:12px 0">75€/ogni 12 mesi Base</div>
+   <p style="font-size:15">In caso di mancato pagamento il bot verrà disattivato</p>
+  </div>
+
+  <div class="plan">
+    <h4>Render / Wallpaper</h4>
+    <p style="color:var(--muted)">Per Render Di un mondo o server Minecraft il prezzo varia tra dettagli tecnici, Tra qualità grafica e dettagli come nuvole volumetriche (nuvole realistiche 3D) il prezzo è trattabile in Chat Privata su discord, Per sfondi Desktop o Copertine o Foto Per Annunci server minecraft il prezzo può partire da 10€ e salire in base alle esigenze o aggiuntive. (i prezzi variano leggermente anche dalla risoluzione che si vuole da un Min 1920x1080 max 8K)  </p>
+    <div style="font-size:22px;font-weight:800;margin:12px 0">10€</div>
+    <div style="font-size:22px;font-weight:800;margin:12px 0">2.50€/render 2D Mondo</div>
+    <div style="font-size:22px;font-weight:800;margin:12px 0">5-10€/render 3D Mondo</div>
+  </div>
+
+  <div class="plan">
+    <h4>Scritte In stile minecraft?</h4>
+    <p style="color:var(--muted)">come nel riquadro a sinistra, il prezzo cambia in base alla risoluzione finale 1920x1080 max 8K, oltre è trattabile in privato.</p>
+    <div style="font-size:22px;font-weight:800;margin:12px 0">Su richiesta</div>
+  </div>
+  
+
+</div>
+</section>
+
+</style>
+
+    <section id="contatti" style="max-width:1200px;margin:40px auto;padding:0 20px">
+      <h2>Contattami</h2>
+      <div style="margin-top:16px;color:var(--muted);font-size:14px">
+        Discord: <strong>Nikstudios</strong><br>
+        Email Collab: <strong>nikstudiosmc@gmail.com</strong>
+      </div>
+    </section>
+  </main>
+
+  <!-- PORTFOLIO -->
+<div style="width:100%; text-align:center; margin:40px 0;">
+  <h2 style="font-size:48px; font-weight:800;">
+    Portfolio
+  </h2>
+  <section id="portfolio" class="features">
+  
+    <div class="feat" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px">
+      <a href="#" style="background:var(--panel);border-radius:12px;overflow:hidden;display:block;box-shadow:0 6px 18px rgba(0,0,0,0.4);transition:transform var(--transition)">
+        <img src="LodeStoneNik.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+        <div style="padding:12px">
+          <h3 style="margin:0 0 6px;font-weight:700">Logo Lodestone Fatto da me</h3>
+          <p style="margin:0;color:var(--muted);font-size:14px">Logo Fatto per progetto di un amico.</p>
+        </div>
+      </a>
+      
+      <a href="#" style="background:var(--panel);border-radius:12px;overflow:hidden;display:block;box-shadow:0 6px 18px rgba(0,0,0,0.4);transition:transform var(--transition)">
+        <img src="PokemcNET.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+        <div style="padding:12px">
+          <h3 style="margin:0 0 6px;font-weight:700">Logo PokeCube</h3>
+          <p style="margin:0;color:var(--muted);font-size:14px">Campagna Ads ad alto rendimento per brand Y.</p>
+        </div>
+      </a>
+      <a href="#" style="background:var(--panel);border-radius:12px;overflow:hidden;display:block;box-shadow:0 6px 18px rgba(0,0,0,0.4);transition:transform var(--transition)">
+        <img src="logo.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+        <div style="padding:12px">
+          <h3 style="margin:0 0 6px;font-weight:700">Snow Realms (logo solo per mostra) </h3>
+          <p style="margin:0;font-size:14px">Logo non realizzato da me, ma reppliclabile.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+  <section id="portfolio1" class="features">
+  
+    <div class="feat" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px">
+      <a href="#" style="background:var(--panel);border-radius:12px;overflow:hidden;display:block;box-shadow:0 6px 18px rgba(0,0,0,0.4);transition:transform var(--transition)">
+        <img src="Mappa RP 2025.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+              <img src="RP Asca 2025 Pt2-150.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+              <img src="CoralMCBVhub-16.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+        <div style="padding:12px">
+          <h3 style="margin:0 0 6px;font-weight:700">Render 2D/3D Mappa</h3>
+          <p style="margin:0;color:var(--muted);font-size:14px">Mappa in fase di costruzione Java su richiesta di una ragazza.</p>
+        </div>
+      </a>
+      
+      <a href="#" style="background:var(--panel);border-radius:12px;overflow:hidden;display:block;box-shadow:0 6px 18px rgba(0,0,0,0.4);transition:transform var(--transition)">
+        <img src="Remake MineCube Lucafnl.png" alt="Logo NixStudios" style="width:200px;margin:20px auto;display:block">
+        <img src="Remake MineCube Lucafnl Staff.png" alt="Logo NixStudios" style="width:200px;margin:20px auto;display:block">
+        <img src="Remake MineCube Lucafnl Project.png" alt="Logo NixStudios" style="width:200px;margin:20px auto;display:block">
+        <div style="padding:12px">
+          <h3 style="margin:0 0 6px;font-weight:700">Logo PokeCube</h3>
+          <p style="margin:0;color:var(--muted);font-size:14px">Alcuni Logo Per Categoria.</p>
+        </div>
+      </a>
+      <a href="#" style="background:var(--panel);border-radius:12px;overflow:hidden;display:block;box-shadow:0 6px 18px rgba(0,0,0,0.4);transition:transform var(--transition)">
+        <img src="EP 2 Stag 2 mark3s Regno dei ghiacci.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+        <img src="8KTitoloSerenityJS.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+        <img src="4K nikytverdescuro - Converted.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+        <div style="padding:12px">
+          <h3 style="margin:0 0 6px;font-weight:700">Mark3s Il Regno Dei ghiacci</h3>
+          <p style="margin:0;color:var(--muted);font-size:14px">Loghi Fatto da me nel 2023, per un vecchio progetto.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+  <div style="width:100%; text-align:center; margin:40px 0;">
+  <h2 style="font-size:48px; font-weight:800;">
+    Alcuni Render Minecraft 🌍
+  </h2>
+  <section id="Render" class="features">
+  
+    <div class="feat" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px">
+      <a href="#" style="background:var(--panel);border-radius:12px;overflow:hidden;display:block;box-shadow:0 6px 18px rgba(0,0,0,0.4);transition:transform var(--transition)">
+        <img src="Render Mark3s e tutti + Anna Render finito.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+              <img src="NIK Ritorno with anna FinitoPt2.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+              <img src="Nik New Render Fine 2024.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+        <div style="padding:12px">
+          <h3 style="margin:0 0 6px;font-weight:700">2025/2022</h3>
+          <p style="margin:0;color:var(--muted);font-size:14px">By Nisktudios.</p>
+        </div>
+      </a>
+      
+      <a href="#" style="background:var(--panel);border-radius:12px;overflow:hidden;display:block;box-shadow:0 6px 18px rgba(0,0,0,0.4);transition:transform var(--transition)">
+        <img src="Nik anna Render PROVA.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+        <img src="EL FINITO (foto 5).png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+        <img src="Cristo_V2.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+        <div style="padding:12px">
+          <h3 style="margin:0 0 6px;font-weight:700">2025/2024</h3>
+          <p style="margin:0;color:var(--muted);font-size:14px">By Nisktudios.</p>
+        </div>
+      </a>
+      <a href="#" style="background:var(--panel);border-radius:12px;overflow:hidden;display:block;box-shadow:0 6px 18px rgba(0,0,0,0.4);transition:transform var(--transition)">
+        <img src="WALLPAPER coral wut - Copia.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+        <img src="Trailer 1.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+        <img src="V2 wallpaper prova.png" alt="Logo NixStudios" style="width:300px;margin:20px auto;display:block">
+        <div style="padding:12px">
+          <h3 style="margin:0 0 6px;font-weight:700">2023/2022</h3>
+          <p style="margin:0;color:var(--muted);font-size:14px">By Nisktudios.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+    <!-- SEZIONE CHI SONO -->
+    <section id="Chisono" style="padding:60px 20px;text-align:center;background:var(--card);margin-top:60px;border-radius:var(--radius);max-width:1200px;margin-left:auto;margin-right:auto;">
+      <h2 style="font-size:38px;font-weight:800;margin-bottom:30px;color:var(--neon)">Chi sono?</h2>
+      <img src="NS.png" alt="Logo NixStudios" style="width:100px;margin:20px auto;display:block">
+      <img src="NIKS.png" alt="Scritta NixStudios" style="width:200px;margin:20px auto;display:block">
+      <p style="max-width:900px;margin:0 auto;color:var(--muted);font-size:1.1rem;line-height:1.6">
+        Ciao!, mi chiamo Nicolas e sono un Creatore Digitale specializzato nello Sviluppo di Minecraft, sia per Java che per Bedrock, includendo anche le diverse Console Edition. 
+        Dal 2015/2016, la mia passione per il Modding di Minecraft su Console ha raggiunto vette significative, alimentando in me una forte determinazione nel creare ogni cosa possibile 
+        in questo affascinante mondo di Minecraft. Sono entusiasta di condividere la mia creatività e il mio impegno per offrire esperienze uniche e coinvolgenti a tutti gli appassionati di Minecraft.
+      </p>
+    </section>
+
+    <!-- SEZIONE ATTUALE -->
+    <section style="padding:60px 20px;">
+      <div style="background:var(--panel);max-width:700px;margin:0 auto;padding:30px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(0,0,0,0.5);">
+        <h3 style="font-size:28px;font-style:italic;margin-bottom:18px;color:var(--neon)">Di cosa mi occupo attualmente?</h3>
+        <p style="color:var(--muted);font-size:1rem;line-height:1.6">
+          Nel periodo dal 14/04/2023 ad oggi, sono impegnato nella realizzazione di un progetto animato <b>Destiny</b>, 
+          operando su diverse aree e responsabilità durante l’arco delle giornate.
+          <h3 style="margin:0 0 6px;font-weight:700">E creando anche il gioco roblox Destiny!</h3>
+        </p>
+      </div>
+    </section>
+
+
+
+
+
+
+
+    
+
+
+  <!-- Widget Discord -->
+  <a href="https://discord.gg/GMUnMBSn4g" target="_blank" id="discord-widget" style="
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:var(--neonDS);
+    color:#5659ff;
+    padding:12px 18px;
+    border-radius:12px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    box-shadow:0 0 12px var(--neon);
+    text-decoration:none;
+    transition: all 0.3s ease;
+    z-index:999;
+  ">
+    <img src="imgdiscord.png" alt="Discord" style="width:24px;height:24px">
+    Server Discord
+  </a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const widget = document.getElementById('discord-widget');
+    widget.addEventListener('mouseover', () => {
+      widget.style.transform = 'translateY(-4px)';
+      widget.style.boxShadow = '0 0 24px var(--neon), 0 0 36px var(--neon)';
+    });
+    widget.addEventListener('mouseout', () => {
+      widget.style.transform = 'translateY(0)';
+      widget.style.boxShadow = '0 0 12px var(--neon)';
+    });
+  </script>
+
+  <!-- Particelle neon -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 60 },
+        color: { value: "#1ed07a" },
+        shape: { type: "circle" },
+        opacity: { value: 0.6 },
+        size: { value: 3 },
+        line_linked: { enable: true, color: "#1ed07a", distance: 120 } 
+      },
+      interactivity: {
+        events: { onhover: { enable: true, mode: "repulse" } }
+      }
+    });
+  </script>
+
+
+
+
+
+<!-- Script Glow Portfolio PNG trasparenti -->
+<script>
+document.querySelectorAll('#portfolio a img').forEach(img => {
+  // Assicurati che l'immagine sia caricata
+  if (img.complete) initGlow(img);
+  else img.onload = () => initGlow(img);
+});
+
+function initGlow(img) {
+  img.style.transition = 'transform 0.3s ease, filter 0.3s ease';
+  
+  img.addEventListener('mouseenter', () => {
+    // Creiamo canvas temporaneo per leggere i pixel
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    ctx.drawImage(img, 0, 0);
+
+    const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    let r=0, g=0, b=0, count=0;
+
+    for(let i=0; i<data.length; i+=4){
+      if(data[i+3] > 0){ // pixel visibile
+        r += data[i];
+        g += data[i+1];
+        b += data[i+2];
+        count++;
+      }
+    }
+    
+    if(count>0){
+      r = Math.floor(r/count);
+      g = Math.floor(g/count);
+      b = Math.floor(b/count);
+    } else {
+      r = 30; g = 208; b = 122; // colore di default verde neon
+    }
+
+    // Applichiamo il glow sferico solo alla forma visibile
+    img.style.transform = 'scale(1.05)';
+    img.style.filter = `
+      drop-shadow(0 0 8px rgb(${r},${g},${b}))
+      drop-shadow(0 0 16px rgb(${r},${g},${b}))
+      drop-shadow(0 0 24px rgb(${r},${g},${b}))
+      drop-shadow(0 0 40px rgb(${r},${g},${b}))
+    `;
+  });
+
+  img.addEventListener('mouseleave', () => {
+    img.style.transform = 'scale(1)';
+    img.style.filter = 'none';
+  });
+}
+</script>
+<script>
+document.querySelectorAll('#portfolio1 a img').forEach(img => {
+  // Assicurati che l'immagine sia caricata
+  if (img.complete) initGlow(img);
+  else img.onload = () => initGlow(img);
+});
+
+function initGlow(img) {
+  img.style.transition = 'transform 0.3s ease, filter 0.3s ease';
+  
+  img.addEventListener('mouseenter', () => {
+    // Creiamo canvas temporaneo per leggere i pixel
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    ctx.drawImage(img, 0, 0);
+
+    const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    let r=0, g=0, b=0, count=0;
+
+    for(let i=0; i<data.length; i+=4){
+      if(data[i+3] > 0){ // pixel visibile
+        r += data[i];
+        g += data[i+1];
+        b += data[i+2];
+        count++;
+      }
+    }
+    
+    if(count>0){
+      r = Math.floor(r/count);
+      g = Math.floor(g/count);
+      b = Math.floor(b/count);
+    } else {
+      r = 30; g = 208; b = 122; // colore di default verde neon
+    }
+
+    // Applichiamo il glow sferico solo alla forma visibile
+    img.style.transform = 'scale(1.05)';
+    img.style.filter = `
+      drop-shadow(0 0 8px rgb(${r},${g},${b}))
+      drop-shadow(0 0 16px rgb(${r},${g},${b}))
+      drop-shadow(0 0 24px rgb(${r},${g},${b}))
+      drop-shadow(0 0 40px rgb(${r},${g},${b}))
+    `;
+  });
+
+  img.addEventListener('mouseleave', () => {
+    img.style.transform = 'scale(1)';
+    img.style.filter = 'none';
+  });
+}
+</script>
+<!--document.querySelectorAll('#portfolio a img').forEach(img => {
+  img.addEventListener('mouseenter', () => {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    ctx.drawImage(img, 0, 0);
+
+    const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+    let r=0,g=0,b=0,count=0;
+    for(let i=0;i<data.length;i+=4){
+      if(data[i+3]>0){ r+=data[i]; g+=data[i+1]; b+=data[i+2]; count++; }
+    }
+    r=Math.floor(r/count); g=Math.floor(g/count); b=Math.floor(b/count);
+
+    img.style.transition = 'transform 0.3s ease, filter 0.3s ease';
+    img.style.transform = 'scale(1.05)';
+    img.style.filter = `
+      drop-shadow(0 0 10px rgb(${r},${g},${b}))
+      drop-shadow(0 0 20px rgb(${r},${g},${b}))
+      drop-shadow(0 0 30px rgb(${r},${g},${b}))
+      drop-shadow(0 0 50px rgb(${r},${g},${b}))
+    `;
+  });
+
+  img.addEventListener('mouseleave', () => {
+    img.style.transform = 'scale(1)';
+    img.style.filter = 'none';
+  });
+});
+-->
+  <footer>
+    <div class="container">
+      <div style="display:flex;gap:12px;align-items:center"><div class="logo" style="width:34px;height:34px;font-size:14px;color:#0b0d0f"><img src="Ns.png" alt="Discord" style="width:40px;height:40px"></div><div style="font-weight:700">Nikstudios</div></div>
+      <div>© <span id="year"></span> Nikstudios — Tutti i diritti riservati</div>
+    </div>
+  </footer>
+
+</body>
+</html>
