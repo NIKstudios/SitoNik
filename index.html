@@ -510,7 +510,7 @@ function initGlow(img) {
   img.style.transition = 'transform 0.3s ease, filter 0.3s ease';
   
   img.addEventListener('mouseenter', () => {
-    // Creiamo canvas temporaneo per leggere i pixel
+ 
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     canvas.width = img.naturalWidth;
@@ -537,7 +537,7 @@ function initGlow(img) {
       r = 30; g = 208; b = 122; // colore di default verde neon
     }
 
-    // Applichiamo il glow sferico solo alla forma visibile
+    
     img.style.transform = 'scale(1.05)';
     img.style.filter = `
       drop-shadow(0 0 8px rgb(${r},${g},${b}))
@@ -555,7 +555,7 @@ function initGlow(img) {
 </script>
 <script>
 document.querySelectorAll('#portfolio1 a img').forEach(img => {
-  // Assicurati che l'immagine sia caricata
+  
   if (img.complete) initGlow(img);
   else img.onload = () => initGlow(img);
 });
@@ -564,7 +564,7 @@ function initGlow(img) {
   img.style.transition = 'transform 0.3s ease, filter 0.3s ease';
   
   img.addEventListener('mouseenter', () => {
-    // Creiamo canvas temporaneo per leggere i pixel
+    
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     canvas.width = img.naturalWidth;
@@ -591,7 +591,7 @@ function initGlow(img) {
       r = 30; g = 208; b = 122; // colore di default verde neon
     }
 
-    // Applichiamo il glow sferico solo alla forma visibile
+    
     img.style.transform = 'scale(1.05)';
     img.style.filter = `
       drop-shadow(0 0 8px rgb(${r},${g},${b}))
