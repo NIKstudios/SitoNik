@@ -263,6 +263,29 @@
     .shot:hover .zoom{opacity:1;transform:none}
     .shot.hide{display:none}
 
+    /* ---------- Software ---------- */
+    .sw{display:grid;grid-template-columns:.8fr 1.4fr;gap:44px;align-items:center}
+    .sw-title{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+    .sw-title img{width:64px;height:64px;border-radius:16px;image-rendering:pixelated;filter:drop-shadow(0 8px 24px rgba(30,208,122,.45))}
+    .sw-title h3{font-family:var(--display);font-size:26px;letter-spacing:-.02em;margin:0;line-height:1.1}
+    .sw-ver{font-family:var(--pixel);font-size:10px;color:var(--neon-2);letter-spacing:.06em}
+    .sw-info > p{color:var(--muted);font-size:16px;margin:0 0 22px}
+    .sw-info .list{margin-bottom:28px}
+    .win{border-radius:16px;overflow:hidden;border:1px solid var(--line-2);background:#0d0f14;cursor:zoom-in;
+      box-shadow:0 40px 100px -30px rgba(0,0,0,.9),0 0 90px -30px rgba(120,110,255,.45)}
+    .win-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#151821;border-bottom:1px solid var(--line)}
+    .win-bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57}
+    .win-bar i:nth-child(2){background:#febc2e}.win-bar i:nth-child(3){background:#28c840}
+    .win-bar span{margin-left:10px;font-size:12px;color:var(--muted);font-weight:600}
+    .win-body{position:relative;aspect-ratio:2400/1467}
+    .win-body img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.02);transition:opacity .6s ease, transform .8s var(--ease)}
+    .win-body img.on{opacity:1;transform:none}
+    .sw-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+    .sw-tabs button{border:1px solid var(--line);background:rgba(255,255,255,.03);padding:8px 14px;border-radius:10px;font-size:13px;font-weight:600;color:var(--muted);transition:all .3s}
+    .sw-tabs button:hover{color:var(--text)}
+    .sw-tabs button.on{background:var(--neon);border-color:var(--neon);color:#03140b}
+    .sw-cap{color:var(--muted);font-size:14px;margin:12px 0 0;min-height:1.6em}
+
     /* ---------- Chi sono ---------- */
     .about{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
     .portrait{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line-2)}
@@ -376,6 +399,7 @@
       .logos{grid-template-columns:1fr 1fr}
       .pricing{grid-template-columns:1fr;max-width:560px;margin:0 auto}
       .about{grid-template-columns:1fr}
+      .sw{grid-template-columns:1fr}
       .portrait{aspect-ratio:16/11}
       .now{grid-template-columns:1fr}
       .stats{grid-template-columns:1fr 1fr}
@@ -437,6 +461,7 @@
           <li><a href="#servizi">Servizi</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#Render">Render</a></li>
+          <li><a href="#software">Software</a></li>
           <li><a href="#Chisono">Chi sono</a></li>
           <li><a href="#prezzi">Prezzi</a></li>
           <li><a href="#contatti">Contatti</a></li>
@@ -571,7 +596,7 @@
             <div class="art"><img src="PokemcNET.png" alt="Logo PokeCube Network" loading="lazy"></div>
             <div class="meta"><div><h4>PokeCube Network</h4><p>Logo per il network PokeCube.</p></div><i>LOGO</i></div>
           </button>
-          <button class="logo-card reveal" style="--d:.08s" data-lb data-glow="230,170,60" data-title="Lodestone" data-sub="Logo">
+          <button class="logo-card reveal" style="--d:.08s" data-lb data-glow="150,90,255" data-title="Lodestone" data-sub="Logo">
             <div class="art"><img src="LodeStoneNik.png" alt="Logo Lodestone" loading="lazy"></div>
             <div class="meta"><div><h4>Lodestone</h4><p>Fatto per il progetto di un amico.</p></div><i>LOGO</i></div>
           </button>
@@ -703,6 +728,60 @@
       </div>
     </section>
 
+    <!-- SOFTWARE: UNIVERSAL NBT STUDIO -->
+    <section id="software" class="block">
+      <div class="wrap">
+        <div class="head reveal">
+          <div>
+            <div class="label">04 — SOFTWARE</div>
+            <h2>Il mio nuovo<br><span class="grad">programma</span>.</h2>
+          </div>
+          <p>Fatto da me, gira tutto sul tuo PC: niente siti, niente upload.</p>
+        </div>
+
+        <div class="sw">
+          <div class="sw-info reveal">
+            <div class="sw-title">
+              <img src="nbtstudio/icon.png" alt="">
+              <div><h3>Universal NBT Studio</h3><span class="sw-ver">v1.0.3 · WINDOWS · JAVA 1.8 → 26.x</span></div>
+            </div>
+            <p>Modifica i tuoi mondi di Minecraft Java con i pulsanti, senza scrivere comandi. Tutto quello che di solito è sparso tra decine di generatori online, in un solo programma.</p>
+            <ul class="list">
+              <li><span>Mappa del mondo con texture, grotte e vista 3D</span></li>
+              <li><span>Giocatori, inventari, mob e oggetti</span></li>
+              <li><span>Generatori: città, dungeon, parkour, statue e altro</span></li>
+              <li><span>Pack Studio: resource pack in un clic</span></li>
+            </ul>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://github.com/NIKstudios/Universal-NBT-Studio/releases/latest" target="_blank" rel="noopener">Scarica gratis <span class="arrow">→</span></a>
+              <a class="btn btn-ghost" href="https://github.com/NIKstudios/Universal-NBT-Studio" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+
+          <div class="sw-shot reveal" style="--d:.1s">
+            <div class="win">
+              <div class="win-bar"><i></i><i></i><i></i><span>NBT Studio</span></div>
+              <div class="win-body">
+                <img src="nbtstudio/map.webp" alt="Mappa chunk con il terreno vero" data-k="0" class="on">
+                <img src="nbtstudio/player.webp" alt="Editor del giocatore" data-k="1" loading="lazy">
+                <img src="nbtstudio/buildgen.webp" alt="Generatore di costruzioni" data-k="2" loading="lazy">
+                <img src="nbtstudio/cmdgen.webp" alt="Fuochi d'artificio e pozioni" data-k="3" loading="lazy">
+                <img src="nbtstudio/packstudio.webp" alt="Pack Studio" data-k="4" loading="lazy">
+              </div>
+            </div>
+            <div class="sw-tabs" role="tablist">
+              <button class="on" data-k="0" data-cap="Il terreno vero visto dall'alto, con strutture, spawn e giocatori.">Mappa</button>
+              <button data-k="1" data-cap="Vita, posizione, modalità e inventario con le icone del gioco.">Giocatore</button>
+              <button data-k="2" data-cap="Pixel art, città, dungeon e molto altro, con anteprima 3D.">Costruzioni</button>
+              <button data-k="3" data-cap="Fuochi d'artificio con anteprima animata, pozioni e comandi pronti.">Fuochi e pozioni</button>
+              <button data-k="4" data-cap="Totem, dischi, quadri ed emoji personalizzati in un clic.">Pack Studio</button>
+            </div>
+            <p class="sw-cap" id="swCap">Il terreno vero visto dall'alto, con strutture, spawn e giocatori.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CHI SONO -->
     <section id="Chisono" class="block">
       <div class="wrap">
@@ -712,7 +791,7 @@
             <div class="badge"><img src="NS.png" alt=""><div><b>Nicolas</b><span>AKA NIKSTUDIOS</span></div></div>
           </div>
           <div class="reveal" style="--d:.1s">
-            <div class="label">04 — CHI SONO</div>
+            <div class="label">05 — CHI SONO</div>
             <img class="wordmark" src="NIKS.png" alt="Nikstudios">
             <p>Ciao! Mi chiamo <b>Nicolas</b> e sono un creatore digitale specializzato nello sviluppo di Minecraft, sia <b>Java</b> che <b>Bedrock</b>, incluse le diverse <b>Console Edition</b>.</p>
             <p>Dal 2015/2016 la mia passione per il modding di Minecraft su console è cresciuta fino a diventare una forte determinazione: creare ogni cosa possibile in questo mondo fatto di blocchi.</p>
@@ -743,7 +822,7 @@
       <div class="wrap">
         <div class="head reveal">
           <div>
-            <div class="label">05 — PREZZI</div>
+            <div class="label">06 — PREZZI</div>
             <h2>Prezzi chiari,<br><span class="grad">niente sorprese</span>.</h2>
           </div>
           <p>Per lavori su misura il prezzo è trattabile in privato su Discord.</p>
@@ -833,7 +912,7 @@
       <div class="foot">
         <a class="brand" href="#"><img src="NS.png" alt="">Nikstudios</a>
         <nav aria-label="Footer">
-          <a href="#servizi">Servizi</a><a href="#portfolio">Portfolio</a><a href="#Render">Render</a><a href="#prezzi">Prezzi</a><a href="#contatti">Contatti</a>
+          <a href="#servizi">Servizi</a><a href="#portfolio">Portfolio</a><a href="#Render">Render</a><a href="#software">Software</a><a href="#prezzi">Prezzi</a><a href="#contatti">Contatti</a>
         </nav>
         <div>© <span id="year"></span> Nikstudios — Tutti i diritti riservati</div>
       </div>
@@ -1047,6 +1126,31 @@
     let sx = null;
     lb.addEventListener('touchstart', e => sx = e.touches[0].clientX, { passive: true });
     lb.addEventListener('touchend', e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); sx = null; });
+
+    /* ---------- Screenshot di NBT Studio ---------- */
+    const swImgs = $$('.win-body img'), swTabs = $$('.sw-tabs button'), swCap = $('#swCap');
+    let swCur = 0, swTimer;
+    const swShow = k => {
+      swCur = k;
+      swImgs.forEach(im => im.classList.toggle('on', +im.dataset.k === k));
+      swTabs.forEach(b => b.classList.toggle('on', +b.dataset.k === k));
+      swCap.textContent = swTabs[k].dataset.cap;
+      clearTimeout(swTimer);
+      if (!reduce) swTimer = setTimeout(() => swShow((swCur + 1) % swTabs.length), 5000);
+    };
+    swTabs.forEach(b => b.addEventListener('click', () => swShow(+b.dataset.k)));
+    swShow(0);
+    $('.win').addEventListener('click', () => {
+      items = swImgs.map((im, k) => {
+        const el = document.createElement('img');
+        el.setAttribute('src', im.getAttribute('src'));
+        el.dataset.title = 'Universal NBT Studio — ' + swTabs[k].textContent;
+        el.dataset.sub = swTabs[k].dataset.cap;
+        return el;
+      });
+      idx = swCur; render();
+      lb.classList.add('open'); document.body.style.overflow = 'hidden';
+    });
 
     /* ---------- Prezzi hosting ---------- */
     const plans = { 1: ['7€', '/ mese', ''], 3: ['20€', '/ 3 mesi', 'Risparmi 1€'], 12: ['75€', '/ 12 mesi', 'Risparmi 9€'] };
